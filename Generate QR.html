@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html>
+ 
+
+<head>
+
+
+  <link rel="stylesheet" href=
+
+"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+ <link rel="icon" href="https://i.ibb.co/nwFfJvb/Screenshot-2023-11-09-18-19-03-437-com-android-chrome-removebg-preview.png">
+  <style>
+
+    .qr-code {
+
+      max-width: 200px;
+
+    }
+    .container-fluid,.scan{
+        margin-bottom: 100%;
+    }
+
+  </style>
+ 
+
+  <title>QR Code Generator</title>
+  <style>
+      .scan{
+  background-color: red;
+  box-shadow: 0 5px 0 darkred;
+  color: white;
+  padding: 1em 1.5em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.scan:hover {
+  background-color: #ce0606;
+}
+
+.scan:active {
+  box-shadow: none;
+  top: 5px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+.logo {
+  width:100px;
+  background: #080808;
+  margin-bottom:100%;
+}
+
+/* footer */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  background: #333;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 100vh;
+}
+
+.footer {
+  position: relative;
+  width:5000px;
+  background: #3586ff;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top:100%;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("https://i.ibb.co/wQZVxxk/wave.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+/*form*/
+ #Information{
+        box-shadow:10px 10px 10px white;
+        border-radius: 20px;
+        border:1px solid black;
+        width: 300px;
+        margin-bottom:100px;
+        }
+    input::placeholder {
+     color: red;  
+    }
+    input{
+        border:0;
+        outline:0;
+        color: red;
+        transition:2s;
+        width: 70px;
+        background: black;
+    } 
+    input:hover{
+        border-bottom:2px solid blue;
+        width: 300px;
+    }
+    button{
+        color: white;
+        background: black;
+    }
+    h3,h6,input,button{
+        padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+<img class="logo" src="https://i.ibb.co/nwFfJvb/Screenshot-2023-11-09-18-19-03-437-com-android-chrome-removebg-preview.png">
+  <div class="container-fluid">
+
+    <div class="text-center">
+ 
+
+      <img src=
+"https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"
+
+        class="qr-code img-thumbnail img-responsive" />
+
+    </div>
+ 
+
+    <div class="form-horizontal">
+
+      <div class="form-group">
+
+        <label class="control-label col-sm-2"
+
+          for="content">
+
+          Content:
+
+        </label>
+
+        <div class="col-sm-10">
+ 
+
+        
+
+          <input type="text" size="60"
+
+            maxlength="60" class="form-control"
+
+            id="content" placeholder="Enter content" />
+
+        </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <div class="col-sm-offset-2 col-sm-10">
+ 
+
+
+          <button type="button" class=
+
+            "btn btn-default" id="generate">
+
+            Generate
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+ <a href="Scan QR.html" class="scan">SCAN QR CODE</a>
+  <footer class="footer">
+      <img src="QR.png" style="width: 100px;">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+
+    </ul>
+    <p>&copy;2024 Source Web| All Rights Reserved</p>
+  </footer>
+  
+<script src=
+
+    "https://code.jquery.com/jquery-3.5.1.js">
+
+  </script>
+ 
+  <script>
+    function htmlEncode(value) {
+      return $('<div/>').text(value)
+        .html();
+    }
+    $(function () {
+      $('#generate').click(function () {
+        let finalURL =
+'https://chart.googleapis.com/chart?cht=qr&chl=' +
+          htmlEncode($('#content').val()) +
+          '&chs=160x160&chld=L|0'
+      $('.qr-code').attr('src', finalURL);
+      });
+    });
+  </script>
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
